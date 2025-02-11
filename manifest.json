@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "UW CS136 Poll Monitor",
+    "version": "1.0",
+    "description": "Monitors CS136 poll page for activity",
+    "permissions": [
+        "notifications",
+        "activeTab",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://student.cs.uwaterloo.ca/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [{
+        "matches": ["https://student.cs.uwaterloo.ca/~cs136/poll-2/*"],
+        "js": ["content.js"]
+    }]
+}
